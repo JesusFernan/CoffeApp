@@ -1,0 +1,77 @@
+<ion-menu [content]="content">
+  <ion-header hidden>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="card-background-page">
+    <ion-card>
+      <img src="../../assets/imgs/logo.jpg" />
+
+    </ion-card>
+
+    <ion-list>
+      <ion-item-divider style="background-color:rgb(93, 56, 8); color: rgb(255, 255, 255);">Categorías</ion-item-divider>
+
+      <ion-item (click)="abrirPaginas('inicio')" menuClose>
+        <ion-icon name="home" item-left large></ion-icon>
+        <h2>Inicio</h2>
+        <p>Ir a la página de inicio</p>
+      </ion-item>
+
+      <ion-item (click)="abrirPaginas('productos')" menuClose>
+        <ion-icon name="cafe" item-left large></ion-icon>
+        <h2>Productos</h2>
+        <p>Mirá todos los productos</p>
+      </ion-item>
+
+      <ion-item (click)="abrirPaginas('ordenar')" menuClose>
+        <ion-icon name="log-in" item-left large></ion-icon>
+        <h2>Ordenar</h2>
+        <p>Productos</p>
+      </ion-item>
+
+      <ion-item-divider style="background-color:rgb(93, 56, 8); color: rgb(255, 255, 255);">Cuenta</ion-item-divider>
+
+      <ion-item *ngIf="loggedIn" menuClose>
+        <ion-icon name="contact" item-left large></ion-icon>
+        <h2>{{ (this.user.firstname == '' ? this.user.username : this.user.firstname) || "" }}</h2>
+        <p>Welcome</p>
+      </ion-item>
+
+      <ion-item class="usuario">
+        <div class="pa4 tc">
+              <img
+              src="http://tachyons.io/img/logo.jpg"
+              class="br-100 ba h3 w3 dib imgP" alt="avatar">
+        </div>
+              <h2>JFernandez@gmail.com</h2>
+              <p>JFernandez </p>
+      </ion-item>
+
+      <ion-item (click)="abrirPaginas('carrito')" menuClose>
+        <ion-icon name="cart" item-left large></ion-icon>
+        <h2>Tú Carrito</h2>
+        <p>Mira tus productos</p>
+      </ion-item>
+
+      <ion-item (click)="abrirPaginas('perfil')" menuClose>
+        <ion-icon name="person" item-left large></ion-icon>
+        <h2>Perfil</h2>
+        <p>Configura tú cuenta</p>
+      </ion-item>
+      
+      <ion-item menuClose>
+        <ion-icon name="log-out" item-left large></ion-icon>
+        <h2>Cerrar sesión</h2>
+        <p>De tú cuenta</p>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

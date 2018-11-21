@@ -1,0 +1,91 @@
+.card-background-page{
+
+    ion-card {
+      position: relative;
+      text-align: center;
+      margin: 0px !important;
+      width: 100% !important;
+      height: 33%;
+      top: -3%;
+    }
+    
+    ion-card:before{
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background: rgb(93, 56, 8);
+        opacity: 0.2;
+
+    }
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 60%;
+      width: 100%;
+      color: #fff;
+    }
+    .list-md {
+        margin: -24px 0 14px;
+        height: 50%;
+    }
+    
+    .label-md {
+        margin: 2px 1px 2px 1px;
+    }
+    img {
+      position: fixed;
+      top: -4%;
+      left: 0%;
+      width: auto;
+      height: auto;
+      
+  }
+    .ba {
+        border-style: solid;
+        border-width: 2px;
+    }
+
+    .br-100 {
+        border-radius: 100%;
+    }
+
+    .h3 {
+        height: 6rem;
+    }
+
+    .w3 {
+        width: 6rem;
+    }
+
+    .pa4 {
+        padding: 1.5rem;
+    }
+
+    .tc {
+        text-align: center;
+        margin-top: 11px;
+    }
+    .usuario{
+        text-align: center;
+        margin-top:  -20px;
+        margin-right: 60px;
+    }
+    .imgP{
+        margin-top: 27px;
+    }
+  }
+
+  

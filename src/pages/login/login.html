@@ -1,0 +1,30 @@
+<ion-content>
+
+  <img src="../../assets/imgs/LOGO_CoffeeApp.PNG" style="top:7%; width:65%; margin: auto; padding:10px;" />
+  <video autoplay loop src="../../assets/video background/Espresso.mp4"></video>
+   
+</ion-content>
+
+<ion-content style="text-align:center; top:40%;">
+  <form #f="ngForm" (ngSubmit)="login(f)">
+    <ion-item style="background:transparent;">
+      <ion-label style="color:rgb(93, 56, 8);  font-size: 20px; background: transparent;" floating>Correo:</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+    <ion-item style="background: transparent;">
+      <ion-label style="color:rgb(93, 56, 8); font-size: 20px; font-weight:50px;" floating>Contraseña:</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+    <ion-item style="text-align:right; color:rgb(93, 56, 8);  font-size: 20px; background: transparent; font-weight:50%;">
+      <ion-label>Recuérdame</ion-label>
+      <ion-toggle [(ngModel)]="recuerdame" name="recuerdame" checked="true" color="secondary" ></ion-toggle>
+    </ion-item>
+  
+    <button style="color:rgb(93, 56, 8); border-color:rgb(243, 0, 0); border-width:3px; left:52%; margin-top:-14%; text-align: center; border-radius: 9999px;  "
+    ion-button outline (click)="loginGoogle()" id="btnGoogle" type="button"> <ion-icon name="logo-googleplus"> </ion-icon> </button>
+     
+    <button style="color:rgb(93, 56, 8); border-color:rgb(93, 56, 8); border-width:2px; left:-9%; margin-top:17%; text-align: center; border-radius: 9999px;  "
+      ion-button outline (click)="login(f)">Iniciar Sesion</button>
+    <button ion-button clear block color="danger" (click)="registro()" >No tienes cuenta? Registrate aqui!</button>
+  </form>
+</ion-content>

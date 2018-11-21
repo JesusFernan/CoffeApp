@@ -10,5 +10,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  prueba(){
+    console.log("Hola desde home");
+  }
 }

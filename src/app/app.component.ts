@@ -1,44 +1,50 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Nav, NavController  } from 'ionic-angular'; 
+import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-
+import { RegisterPage } from '../pages/register/register';
+import { OrdenarPage } from '../pages/ordenar/ordenar';
+import { CarritoPage } from '../pages/carrito/carrito';
+import { PerfilPage } from '../pages/perfil/perfil';
+ 
+ 
+  
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: '../pages/menu/menu.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+   
+  @ViewChild(Nav) navCtrl: NavController;
+   
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
+   
 
-  pages: Array<{title: string, component: any}>;
+     
+  abrirPaginas(paginaNombre: string){
+    
+    if(paginaNombre == 'login'){
+        this.navCtrl.push(LoginPage);
+    }
+    if(paginaNombre == 'registrar'){
+        this.navCtrl.push(RegisterPage);
+    }
+    if(paginaNombre == 'inicio'){
+        this.navCtrl.push(HomePage);
+    }
+    if(paginaNombre == 'productos'){
+        this.navCtrl.push(HomePage);
+    }
+    if(paginaNombre == 'ordenar'){
+        this.navCtrl.push(OrdenarPage);
+    }
+    if(paginaNombre == 'carrito'){
+        this.navCtrl.push(CarritoPage);
+    }
+    if(paginaNombre == 'perfil'){
+        this.navCtrl.push(PerfilPage);
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
-
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    }
   }
 }
+
